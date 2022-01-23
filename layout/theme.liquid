@@ -8,7 +8,7 @@
   <link rel="canonical" href="{{ canonical_url }}">
 
   {%- if settings.favicon != blank -%}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png">
   {%- endif -%}
 
   {%- capture seo_title -%}
@@ -50,14 +50,15 @@
   {{ content_for_header }}
 
   {{ 'app.css' | asset_url | stylesheet_tag }}
+
 </head>
 
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
-  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+  
 
   {% section 'header' %}
 
-  <main role="main" id="MainContent">
+  <main role="main" id="app">
     {{ content_for_layout }}
   </main>
 
@@ -65,5 +66,6 @@
 
   <script src="{{ 'app.js' | asset_url }}" defer></script>
 
+  
 </body>
 </html>
