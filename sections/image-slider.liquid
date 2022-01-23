@@ -6,6 +6,7 @@
 {% schema %}
 {
   "name": "Image Slider",
+  "max_blocks": 10,
   "settings": [
     {
       "type": "header",
@@ -16,6 +17,24 @@
       "id": "title",
       "label": "Heading",
       "default": "Slider title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Image Title"
+        }
+      ]
     }
   ],
   "presets": [
